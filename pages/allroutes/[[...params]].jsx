@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 
 const Page = () => {
   const router = useRouter();
+  // debugger;
 
-  const { params } = router.query;
+  console.log(router.query);
 
-  return <h1>All routes {JSON.stringify(params, null, 2)}</h1>;
+  return <h1>All routes</h1>;
 };
 
 export default Page;
