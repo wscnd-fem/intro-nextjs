@@ -8,6 +8,9 @@ const Page = () => {
   return (
     <div>
       <h1>Note {id}</h1>
+      <button type="button" onClick={() => router.back()}>
+        <p>Go back</p>
+      </button>
     </div>
   );
 };
