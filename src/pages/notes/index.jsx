@@ -21,6 +21,7 @@ const Page = () => {
           <button
             type="button"
             onClick={() => router.push(`/notes/${note.id}`)}
+            key={note.id}
           >
             <p>Go to {note.title}</p>
           </button>

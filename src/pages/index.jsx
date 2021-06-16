@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Page = () => (
   <div>
-    <h1>Note index path</h1>
+    <h1>Notes index path</h1>
     <Link href="/notes">
-      <a>Note</a>
+      <a>Notes</a>
     </Link>
   </div>
 );
