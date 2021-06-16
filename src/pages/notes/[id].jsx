@@ -4,11 +4,12 @@ import { useRouter } from "next/router";
 
 const Page = () => {
   const router = useRouter();
-  // debugger;
-
-  console.log(router.query);
-
-  return <h1>All routes</h1>;
+  const { id } = router.query;
+  return (
+    <div>
+      <h1>Note {id}</h1>
+    </div>
+  );
 };
 
 export default Page;
