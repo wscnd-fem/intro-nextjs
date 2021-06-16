@@ -14,19 +14,18 @@ const Page = () => {
     <div>
       <h1>Note index path</h1>
       {notes.map((note) => (
-        <>
+        <p key={note.id}>
           {/* <Link href={`/notes/${note.id}`} key={note.id}>
             <a>Go to {note.title}</a>
           </Link> */}
           <button
             type="button"
             onClick={() => router.push(`/notes/${note.id}`)}
-            key={note.id}
           >
             <p>Go to {note.title}</p>
           </button>
           <br />
-        </>
+        </p>
       ))}
       <a href="https://www.google.com"></a>
     </div>
