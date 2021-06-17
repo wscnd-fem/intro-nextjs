@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev --port 3001",
+    "dev": "NODE_OPTIONS='--inspect' next dev -p 3001",
     "build": "next build",
     "start": "next start"
   },
