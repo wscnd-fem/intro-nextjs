@@ -44,6 +44,6 @@ const theme = {
   },
 };
 
-console.dir(theme, { depth: Infinity });
+// console.dir(theme, { depth: Infinity });
 
 export default theme;
