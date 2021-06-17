@@ -1,20 +1,21 @@
-import React from "react";
+/** @jsxImportSource theme-ui */
 
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Button } from "theme-ui";
 
 const Page = () => {
   const router = useRouter();
   const { id } = router.query;
   return (
-    <div>
+    <div sx={{ variant: "containers.page" }}>
       <h1>Note {id}</h1>
-      <button type="button" onClick={() => router.back()}>
+      {/* <Button variant="simple" type="button" onClick={() => router.back()}>
         <p>Go back</p>
-      </button>
+      </Button>
       <Link href={"/"}>
         <a>Go to Home</a>
-      </Link>
+      </Link> */}
     </div>
   );
 };
