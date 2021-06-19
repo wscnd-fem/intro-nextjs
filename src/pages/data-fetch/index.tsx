@@ -30,7 +30,7 @@ const Page = ({ notes }: { notes: Note[] }) => {
       >
         {notes.map((note, i) => (
           <section sx={{ width: "33%", p: 2 }} key={note.id}>
-            <Link href="/data-fetch/[id]" as={`/data-fetch/${note.slug}`}>
+            <Link href="/data-fetch/[slug]" as={`/data-fetch/${note.slug}`}>
               <a sx={{ textDecoration: "none", cursor: "pointer" }}>
                 <div sx={{ variant: "containers.card" }}>
                   <strong>{note.name}</strong>
