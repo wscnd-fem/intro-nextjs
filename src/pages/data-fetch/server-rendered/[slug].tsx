@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 import type { ParsedUrlQuery } from 'querystring';
 
 import {
