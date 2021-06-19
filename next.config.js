@@ -9,7 +9,7 @@ const {
 module.exports = (phase, { defaultConfig }) => {
   //   console.log(defaultConfig);
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    console.log("I'm in dev mode");
+    // console.log("I'm in dev mode");
     return {
       /* development only config options here */
       ...defaultConfig,

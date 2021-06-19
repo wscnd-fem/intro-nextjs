@@ -30,6 +30,10 @@ const Nav = () => (
         <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>notes</a>
       </Link>
 
+      <Link href="/data-fetch">
+        <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>data-fetch</a>
+      </Link>
+
       <a
         sx={{
           color: "text",
