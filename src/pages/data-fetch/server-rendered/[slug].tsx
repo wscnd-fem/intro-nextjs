@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
 import { GetServerSideProps } from 'next';
-import { useRouter } from 'next/router';
 import type { ParsedUrlQuery } from 'querystring';
 
 import {
@@ -13,11 +12,6 @@ interface PageProps {
 }
 
 const Page = ({ noteData }: PageProps) => {
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <p>loading...</p>;
-  }
   // console.log("note data is", noteData);
   return (
     <div sx={{ height: `calc(100vh - 60px)` }}>
@@ -56,19 +50,20 @@ interface ServerSideProps extends ParsedUrlQuery {
 }
 
 export const getServerSideProps: GetServerSideProps<
-  PageProps,
+  PageProps | {},
   ServerSideProps
-> = async (context) => {
-  const slug = context.params.slug;
-  const { id: noteId } = getNoteBySlug(slug as string);
-  const results = await fetch(`${process.env.API}/notes/${noteId}`);
-  const { data: noteData }: { data: Note } = await results.json();
+> = async ({ params: { slug }, req, res }) => {
+  const { id } = getNoteBySlug(slug) ?? {};
+  const results = await fetch(`${process.env.API}/notes/${id}`);
 
-  if (!noteData) {
+  if (!results.ok) {
+    res.writeHead(302, { Location: "/data-fetch/server-rendered" });
+    res.end();
     return {
-      notFound: true,
+      props: {},
     };
   }
+  const { data: noteData }: { data: Note } = await results.json();
 
   return {
     props: { noteData },

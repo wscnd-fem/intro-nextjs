@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import Link from "next/link";
+import Link from 'next/link';
 
 const Nav = () => (
   <header
@@ -34,6 +34,9 @@ const Nav = () => (
         <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>data-fetch</a>
       </Link>
 
+      <Link href="/data-fetch/server-rendered">
+        <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>data-fetch server rendered</a>
+      </Link>
       <a
         sx={{
           color: "text",

@@ -97,7 +97,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   console.dir(context, { depth: Infinity });
   const results = await fetch(`${process.env.API}/notes`);
   const { data: notes }: { data: Note[] } = await results.json();
-  console.log("notes are:", notes);
+  // console.log("notes are:", notes);
 
   return {
     props: {
