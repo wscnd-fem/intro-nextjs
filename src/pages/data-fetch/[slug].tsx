@@ -13,8 +13,16 @@ import {
 interface PageProps {
   noteData: Note;
 }
+
 const Page = ({ noteData }: PageProps) => {
   // console.log("note data is", noteData);
+  if (!noteData) {
+    return (
+      <div>
+        <p>wait bro</p>
+      </div>
+    );
+  }
   return (
     <div sx={{ height: `calc(100vh - 60px)` }}>
       <div
@@ -58,11 +66,11 @@ export const getStaticPaths: GetStaticPaths<StaticPathParams> = async () => {
     },
   }));
 
-  console.log("paths", paths);
+  // console.log("paths", paths);
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 

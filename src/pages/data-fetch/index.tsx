@@ -1,9 +1,9 @@
 /** @jsxImportSource theme-ui */
 
-import { GetStaticProps } from "next";
-import Link from "next/link";
+import { GetStaticProps } from 'next';
+import Link from 'next/link';
 
-import { Note } from "../../data/data";
+import { Note } from '../../data/data';
 
 const Page = ({ notes }: { notes: Note[] }) => {
   return (
@@ -19,6 +19,17 @@ const Page = ({ notes }: { notes: Note[] }) => {
       >
         <h1 sx={{ fontSize: 8, my: 0 }}>Note data fetch</h1>
       </div>
+
+      <h2
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        getStaticProps, getStaticPaths
+      </h2>
 
       <div
         sx={{
@@ -40,6 +51,41 @@ const Page = ({ notes }: { notes: Note[] }) => {
           </section>
         ))}
       </div>
+
+      <h2
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        getServerSideProps
+      </h2>
+      <div
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        {notes.map((note, i) => (
+          <section sx={{ width: "33%", p: 2 }} key={note.id}>
+            <Link
+              href="/data-fetch/server-rendered/[slug]"
+              as={`/data-fetch/server-rendered/${note.slug}`}
+            >
+              <a sx={{ textDecoration: "none", cursor: "pointer" }}>
+                <div sx={{ variant: "containers.card" }}>
+                  <strong>{note.name}</strong>
+                </div>
+              </a>
+            </Link>
+          </section>
+        ))}
+      </div>
+
       <div>
         <pre>{JSON.stringify(notes, null, 2)}</pre>
       </div>
