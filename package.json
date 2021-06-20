@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev -p 3001",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 3002"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "theme-ui": "^0.9.1"
   },
   "devDependencies": {
+    "@types/morgan": "^1.9.2",
     "@types/react": "^17.0.11",
     "eslint": "^7.28.0",
     "eslint-config-next": "^11.0.0",

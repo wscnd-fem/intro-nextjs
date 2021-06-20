@@ -1,10 +1,13 @@
-import { urlencoded } from "body-parser";
-import cors from "cors";
-import morgan from "morgan";
-import { NextApiRequest, NextApiResponse } from "next";
-import nc from "next-connect";
+import { urlencoded } from 'body-parser';
+import cors from 'cors';
+import morgan from 'morgan';
+import {
+  NextApiRequest,
+  NextApiResponse,
+} from 'next';
+import nc from 'next-connect';
 
-import notes from "../../../data/data";
+import notes from '../../../data/data';
 
 const handler = nc<NextApiRequest, NextApiResponse>();
 

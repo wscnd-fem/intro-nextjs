@@ -8,11 +8,14 @@ import notes from "../../../data/data";
 
 const handler = nc<NextApiRequest, NextApiResponse>();
 
+interface ResponseType {}
+
 /**
  * can define in each handler custom properties to req and res
  * https://github.com/hoangvvo/next-connect#typescript
  */
-const getNote = (id) => notes.find((note) => note.id === Number(id));
+const getNote = (id: NextApiRequest["query"]["id"]) =>
+  notes.find((note) => note.id === Number(id));
 
 handler
   .use(cors())
